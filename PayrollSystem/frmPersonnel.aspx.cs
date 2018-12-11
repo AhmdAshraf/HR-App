@@ -13,7 +13,16 @@ namespace PayrollSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // set button visibility if security level equals A
+            if (Session["SecurityLevel"] == "A")
+            {
+                btnSubmit.Visible = true;
+                // else set submit button visibilty to false
+            }
+            else
+            {
+                btnSubmit.Visible = false;
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
